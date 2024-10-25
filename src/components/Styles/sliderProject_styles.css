@@ -1,0 +1,33 @@
+.sliderProject .swiper-pagination-bullets.swiper-pagination-horizontal {
+  background-color: rgba(0,0,0, 0.3);
+  border-bottom-left-radius: 0.2857rem;
+  border-bottom-right-radius: 0.2857rem;
+  bottom: 0px;
+}
+.sliderProject .swiper-pagination-bullet {
+background: white;
+}
+
+.sliderProject .swiper-button-prev {
+  color: black;
+  position: absolute;
+  margin: 0;
+  background: rgba(255,255,255, 0.7);
+  padding: 3px 5px 0 7px;
+}
+
+.sliderProject .swiper-button-next{
+  color: black;
+  position: absolute;
+  margin: 0;
+  background: rgba(255,255,255, 0.7);
+  padding: 3px 5px 0 7px;
+}
+
+.sliderProject .swiper-button-prev:after {
+  font-size: 30px;
+}
+
+.sliderProject .swiper-button-next:after {
+  font-size: 30px;
+}
