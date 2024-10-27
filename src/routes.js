@@ -1,11 +1,13 @@
+// Importaciones de iconos y componentes necesarios
 import {
   GridView,
 } from "@mui/icons-material";
 
-// PAGES
+// PÁGINAS
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import Users from "views/Admin/UsersListAdmin";
 
+// Definición de las rutas del dashboard
 const dashboardRoutes = [
   {
     id: 0,
@@ -33,4 +35,5 @@ const dashboardRoutes = [
   },
 ];
 
+// Exportación de las rutas del dashboard
 export default dashboardRoutes;

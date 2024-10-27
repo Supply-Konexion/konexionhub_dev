@@ -1,16 +1,17 @@
-import React, { useState, useEffect, useContext } from "react";
-import { UrlServicesContext } from "components/UrlServicesContext";
-import { Navigate } from "react-router-dom";
+// Este archivo define la vista del Dashboard en la aplicación.
+// Importa varios componentes y librerías necesarias para su funcionamiento.
 
+// Importaciones de librerías y componentes
+import { Navigate } from "react-router-dom";
 // @material-ui/core
 import { makeStyles } from "@mui/styles";
 import { ArrowRightAlt, MapsHomeWork } from "@mui/icons-material";
-// core components
+// Componentes principales
 import { Stack, Grid, Alert } from "@mui/material";
 import axios from "axios";
 
+// Importación de recursos y estilos
 import construction from "assets/img/undraw_under_construction_46pa.png";
-
 import {
   dashboardStyle,
   ButtonExit,
@@ -18,11 +19,14 @@ import {
 } from "components/dashboardStyle.js";
 import { blackColor } from "components/material-dashboard-react";
 
+// Definición de estilos
 const useStyles = makeStyles(dashboardStyle);
 
+// Componente principal del Dashboard
 export default function Dashboard() {
   const classes = useStyles();
 
+  // Definición de estados
   const [returnLogin, setReturnLogin] = React.useState(false);
   const [error, setError] = useState(false);
   const [mensageSystem, setMensageSystem] = useState("");
@@ -31,9 +35,11 @@ export default function Dashboard() {
   const [countProject, setCountProject] = useState(0);
   const [countPublication, setCountPublication] = useState(0);
 
+  // Contexto y autorización
   const { urlServices, UserAuth } = useContext(UrlServicesContext);
   let keyAuthorization = UserAuth.Session;
 
+  // Navegación basada en estado
   if (buttonUsers) {
     return <Navigate to="/account/users" />;
   }
@@ -46,6 +52,7 @@ export default function Dashboard() {
     return <Navigate to="/" />;
   }
 
+  // Renderizado del componente
   return (
     <div
       className={classes.carDashboard}
@@ -58,8 +65,8 @@ export default function Dashboard() {
       }}
     >
       <img src={construction} alt="construction" style={{ width: 450 }} />
-      <br></br>
-      <br></br>
+      <br />
+      <br />
       <b> EN DESARROLLO...</b>
     </div>
   );

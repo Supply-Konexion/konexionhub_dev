@@ -1,27 +1,32 @@
+// Importaciones de librerías y contextos necesarios
 import React, { useState, useContext, useEffect, Fragment } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { UrlServicesContext } from "components/UrlServicesContext";
 
-// @material-ui/core components
+// Importaciones de componentes de @material-ui/core
 import { makeStyles } from "@mui/styles";
-// core components
+// Importaciones de componentes principales
 import NavbarAdmin from "components/Navbars/Navbar.js";
 import Sidebar from "components/Sidebar/SidebarAdmin";
 import axios from "axios";
 import { Typography, Card, CardContent, Grid } from "@mui/material";
 
+// Importaciones de estilos
 import { appStyle, CircularProgressTheme } from "components/adminStyle.js";
 
-/* #################### COMPONENTS ############################# */
+/* #################### COMPONENTES ############################# */
 import Dashboard from "views/Dashboard/Dashboard.js";
 import MyAccount from "views/Admin/MyAccount.js";
 /* ############################################################# */
 
+// Importación de imágenes
 import logo from "assets/img/LogotipoKonexionScopBlanco.png";
 import logoBlack from "assets/img/LogotipoFondoTransparente_Konexion.png";
 
+// Definición de estilos
 const useStyles = makeStyles(appStyle);
 
+// Componente principal para el layout de SuperAdmin
 export default function SuperAdmin({ ...rest }) {
   const classes = useStyles();
 
@@ -128,7 +133,7 @@ export default function SuperAdmin({ ...rest }) {
     setCurrentRoute(location.pathname);
   }, [location.pathname]);
 
-  // ref to help us initialize PerfectScrollbar on windows devices
+  // Referencia para inicializar PerfectScrollbar en dispositivos Windows
   const mainPanel = React.createRef();
 
   const [alert] = React.useState({
@@ -154,7 +159,7 @@ export default function SuperAdmin({ ...rest }) {
     return <Navigate to="/" />;
   }
 
-  /* #################### ROUTES ############################# */
+  /* #################### RUTAS ############################# */
   const urlLinks = (() => {
     const routes = {
       "/account/dashboard-customer": {
