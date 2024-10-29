@@ -8,7 +8,7 @@ Node.js
 npm
 React
 
-### Cómo Ejecutar
+### Setup
 Clona el repositorio:
 
 ```git clone https://github.com/Supply-Konexion/konexionhub_dev.git```
