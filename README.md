@@ -5,17 +5,24 @@ El nuevo repositorio de Supply Konexion para desarrollar el frontend de la plata
 
 ### Dependencias
 Node.js
-npm o yarn
+npm
 React
 
 ### Cómo Ejecutar
 Clona el repositorio:
+
 ```git clone https://github.com/Supply-Konexion/konexionhub_dev.git```
+
 Navega al directorio del proyecto:
+
 ```cd konexionhub_dev```
+
 Instala las dependencias:
+
 ```npm install```
+
 Inicia el servidor de desarrollo:
+
 ```npm start```
 
 ### Licencia
