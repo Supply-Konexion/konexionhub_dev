@@ -1,32 +1,29 @@
-// Importaciones de librerías y contextos necesarios
 import React, { useState, useContext, useEffect, Fragment } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { UrlServicesContext } from "components/UrlServicesContext";
 
-// Importaciones de componentes de @material-ui/core
+// @material-ui/core components
 import { makeStyles } from "@mui/styles";
-// Importaciones de componentes principales
+// core components
 import NavbarAdmin from "components/Navbars/Navbar.js";
 import Sidebar from "components/Sidebar/SidebarAdmin";
 import axios from "axios";
 import { Typography, Card, CardContent, Grid } from "@mui/material";
 
-// Importaciones de estilos
 import { appStyle, CircularProgressTheme } from "components/adminStyle.js";
 
-/* #################### COMPONENTES ############################# */
+/* #################### COMPONENTS ############################# */
 import Dashboard from "views/Dashboard/Dashboard.js";
 import MyAccount from "views/Admin/MyAccount.js";
+import ServicesPageAdmin from "views/Admin/ServicesPageAdmin.js";
+import SupplierCustomer from "views/Admin/SupplierCustomer.js";
 /* ############################################################# */
 
-// Importación de imágenes
 import logo from "assets/img/LogotipoKonexionScopBlanco.png";
 import logoBlack from "assets/img/LogotipoFondoTransparente_Konexion.png";
 
-// Definición de estilos
 const useStyles = makeStyles(appStyle);
 
-// Componente principal para el layout de SuperAdmin
 export default function SuperAdmin({ ...rest }) {
   const classes = useStyles();
 
@@ -133,7 +130,7 @@ export default function SuperAdmin({ ...rest }) {
     setCurrentRoute(location.pathname);
   }, [location.pathname]);
 
-  // Referencia para inicializar PerfectScrollbar en dispositivos Windows
+  // ref to help us initialize PerfectScrollbar on windows devices
   const mainPanel = React.createRef();
 
   const [alert] = React.useState({
@@ -159,7 +156,7 @@ export default function SuperAdmin({ ...rest }) {
     return <Navigate to="/" />;
   }
 
-  /* #################### RUTAS ############################# */
+  /* #################### ROUTES ############################# */
   const urlLinks = (() => {
     const routes = {
       "/account/dashboard-customer": {
@@ -169,6 +166,30 @@ export default function SuperAdmin({ ...rest }) {
       "/account/myaccount": {
         component: <MyAccount />,
         name: "Tu perfil",
+      },
+      "/account/services": {
+        component: <ServicesPageAdmin />,
+        name: "Servicios",
+      },
+      "/account/supplier-customer": {
+        component: <SupplierCustomer />,
+        name: "Calificacion proveedores/clientes",
+      },
+      "/account/cost-optimization": {
+        component: <ServicesPageAdmin />,
+        name: "Servicios",
+      },
+      "/account/negotiation-purchasing": {
+        component: <ServicesPageAdmin />,
+        name: "Servicios",
+      },
+      "/account/product-quality": {
+        component: <ServicesPageAdmin />,
+        name: "Servicios",
+      },
+      "/account/logistics-management": {
+        component: <ServicesPageAdmin />,
+        name: "Servicios",
       },
     };
 

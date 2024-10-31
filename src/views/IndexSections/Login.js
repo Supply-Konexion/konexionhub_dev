@@ -5,7 +5,6 @@ import debounce from "lodash.debounce";
 
 // reactstrap components
 import { makeStyles } from "@mui/styles";
-import { Button } from "reactstrap";
 import GoogleLogin from "react-google-login";
 import { Visibility, VisibilityOff, Google } from "@mui/icons-material";
 import axios from "axios";
@@ -21,13 +20,14 @@ import {
   Snackbar,
   Slide,
   Box,
+  Button,
 } from "@mui/material";
 
 import {
-  purpleColor,
   ParagraphTextPage,
   cardBodyStyle,
   CircularProgressTheme,
+  ButtonStyle0,
 } from "components/cardBodyStyle";
 
 import PasswordRecovery from "../Dialog/PasswordRecovery";
@@ -287,7 +287,7 @@ export default function Login(props) {
         </ParagraphTextPage>
       </Grid>
       <Grid item xs={12} md={12}>
-        <form onSubmit={submitFormLogin}>
+        <form onSubmit={submitFormLogin()}>
           <TextField
             id="outlined-basic"
             label="Correo electrónico"
@@ -442,25 +442,13 @@ export default function Login(props) {
                 {loaderLogin ? (
                   <CircularProgressTheme style={{ marginTop: 40 }} />
                 ) : (
-                  <Button
-                    color="info"
-                    size="lg"
-                    style={{
-                      marginTop: 40,
-                      background: purpleColor,
-                      color: "#ffffff",
-                      letterSpacing: ".011em",
-                      fontFamily: "sans-serif",
-                      fontSize: 12,
-                      padding: "15px 0",
-                      width: "85%",
-                      borderRadius: 10,
-                    }}
+                  <ButtonStyle0
                     onClick={submitFormLogin()}
                     type="submit"
+                    style={{ marginTop: 40 }}
                   >
-                    <b>Iniciar sesión</b>
-                  </Button>
+                    Iniciar sesión
+                  </ButtonStyle0>
                 )}
               </center>
             </Grid>

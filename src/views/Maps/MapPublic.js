@@ -1,46 +1,40 @@
-// Este archivo define la vista del Dashboard para los Clientes en la aplicación.
-// Importa varios componentes y librerías necesarias para su funcionamiento.
+import React from "react";
+import { UrlServicesContext } from "components/UrlServicesContext";
+import GoogleMapReact from "google-map-react";
+import { LocationOn } from "@mui/icons-material";
 
-// @material-ui/core
-import { makeStyles } from "@mui/styles";
-import { ArrowRightAlt } from "@mui/icons-material";
-// Componentes principales
-import { Stack, Grid } from "@mui/material";
+const markerStyle = {
+  position: "absolute",
+  top: "100%",
+  left: "50%",
+  width: 40,
+  height: 50,
+  transform: "translate(-50%, -100%)",
+  color: "#d32f2f",
+};
 
-// Importación de gráficos
-import BarChartPropertiesCities from "views/Graphs/BarChartPropertiesCities";
-import PieChartPropertiesType from "views/Graphs/PieChartPropertiesType";
+export default function MapPublic(props) {
+  const { keyMapGoogle } = React.useContext(UrlServicesContext);
 
-// Importación de estilos y componentes personalizados
-import {
-  dashboardStyle,
-  ButtonExit,
-  TitleTextPage,
-} from "components/dashboardStyle.js";
+  const defaultProps = {
+    center: {
+      lat: props.lt,
+      lng: props.lg,
+    },
+  };
 
-// Definición de estilos
-const useStyles = makeStyles(dashboardStyle);
-
-// Componente principal del Dashboard de Clientes
-export default function DashboardCustomers() {
-  const classes = useStyles();
-
-  // Definición de estados
-  const [buttonProperties, setButtonProperties] = useState(false);
-
-  // Efecto para el scroll al inicializar el componente
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
-  // Navegación basada en estado
-  if (buttonProperties) {
-    return <Navigate to="/account/properties" />;
-  }
-
-  // Renderizado del componente
   return (
-    <div>
+    // Important! Always set the container height explicitly
+    <div style={{ height: "400px", width: "100%" }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: keyMapGoogle }}
+        defaultCenter={defaultProps.center}
+        zoom={parseInt(props.zoom)}
+      >
+        <div lat={props.lt} lng={props.lg}>
+          <LocationOn sx={markerStyle} />
+        </div>
+      </GoogleMapReact>
     </div>
   );
 }

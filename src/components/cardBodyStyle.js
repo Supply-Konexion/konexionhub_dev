@@ -10,6 +10,8 @@ import LinearProgress, {
 } from "@mui/material/LinearProgress";
 import { Button, AppBar, Tabs, Switch } from "@mui/material";
 
+import backgroundImge from "assets/img/Ondahorizontal.png";
+
 import {
   defaultFont,
   defaultFontTitle,
@@ -133,19 +135,6 @@ const cardBodyStyle = createStyles({
     bottom: 0,
     right: 0,
     width: "100%",
-  },
-  cardImgVehicleWeb: {
-    width: "100%",
-    height: 210,
-    background: "transparent 50% no-repeat",
-    backgroundPosition: "50%",
-    backgroundSize: "cover",
-    objectFit: "cover",
-    objectPosition: "center",
-    verticalAlign: "middle",
-    position: "relative",
-    overflow: "hidden",
-    borderRadius: 10,
   },
   cardImgMechanicsWeb: {
     width: 110,
@@ -732,7 +721,9 @@ const cardBodyStyle = createStyles({
     padding: 10,
     border: "1px solid rgb(241, 241, 241)",
     borderRadius: 6,
-    background: "#fff",
+    backgroundImage: `url(${backgroundImge})`,
+    backgroundPosition: "center", // Centra la imagen en ambos ejes
+    backgroundSize: "cover", // Cubre todo el contenedor
     width: "100%",
     display: "flex",
     margin: "15px 0",
@@ -1455,19 +1446,24 @@ const TabsTheme = styled(Tabs)(({ theme }) => ({
 }));
 
 const ButtonStyle0 = styled(Button)(({ theme }) => ({
-  width: 200,
-  padding: "8px 20px",
-  fontSize: 14,
-  color: "#fff",
+  marginTop: 5,
+  background: purpleColor,
+  color: "#ffffff",
+  letterSpacing: ".011em",
+  fontSize: 12,
+  textTransform: "none",
+  padding: "10px 0",
+  width: 180,
+  borderRadius: 5,
+  border: "1px solid #0B2545", // Cambia el borde en hover
   ...defaultFontButtom,
-  backgroundColor: purpleColor,
-  borderColor: purpleColor,
-  borderRadius: 10,
   "&:hover": {
-    backgroundColor: infoColor[4],
+    background: "#ffffff",
+    color: "#0B2545",
   },
   "&:disabled": {
-    backgroundColor: grayColor[11],
+    backgroundColor: grayColor[5],
+    border: `1px solid ${grayColor[5]}`,
   },
 }));
 

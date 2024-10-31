@@ -281,12 +281,9 @@ const sidebarStyle = createStyles({
   },
   itemText2: {
     ...defaultFont,
-    marginTop: 70,
-    padding: "20px 20px 0 20px",
+    padding: "3px 2px 0 2px",
     fontSize: 14,
-    // color: whiteColor
-    color: "#000",
-    fontWeight: "bold",
+    color: blackColor,
   },
   itemText3: {
     ...defaultFont,
@@ -477,6 +474,7 @@ const sidebarStyle = createStyles({
     fontSize: 14,
     fontWeight: 400,
     marginLeft: 10,
+    color: "#FFFFFF"
   },
   itemLinkCollapseNameSub: {
     ...defaultFont,

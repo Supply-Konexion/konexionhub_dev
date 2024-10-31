@@ -6,8 +6,8 @@ const { Provider, Consumer } = UrlServicesContext;
 
 function UrlServicesProvider({ children }) {
   /* ### API ### */
-  // const [urlServices] = useState("http://192.168.100.13:3001/");
-  //const [urlWeb] = useState("http://192.168.100.13:3000/");
+  //const [urlServices] = useState("http://localhost:3001/");
+  //const [urlWeb] = useState("http://localhost:3000/");
   const [urlWeb] = useState("https://web.konexionhub.aplios.software/");
   const [urlServices] = useState(
     "https://web.konexionhub.aplios.software/konexionhub.api/"

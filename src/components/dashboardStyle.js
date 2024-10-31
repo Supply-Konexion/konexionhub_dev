@@ -19,6 +19,8 @@ import {
   defaultFontParagraph,
 } from "./material-dashboard-react";
 
+import backgroundImge from "assets/img/Ondahorizontal.png";
+
 const dashboardStyle = createStyles({
   successText: {
     color: successColor[0],
@@ -112,16 +114,22 @@ const dashboardStyle = createStyles({
     padding: 10,
     border: "1px solid rgb(241, 241, 241)",
     borderRadius: 6,
-    background: "#fff",
+    backgroundImage: `url(${backgroundImge})`,
+    backgroundPosition: "center", // Centra la imagen en ambos ejes
+    backgroundSize: "cover", // Cubre todo el contenedor
     width: "100%",
     display: "flex",
     margin: "15px 0",
   },
   cardDashboardTop: {
-    background: blackColor,
-    borderRadius: 10,
-    padding: "20px 15px",
-    width: "99%",
+    border: "1px solid rgb(241, 241, 241)",
+    borderRadius: 6,
+    backgroundImage: `url(${backgroundImge})`,
+    backgroundPosition: "center", // Centra la imagen en ambos ejes
+    backgroundSize: "cover", // Cubre todo el contenedor
+    width: "100%",
+    display: "flex",
+    margin: "15px 0",
   },
   titleCard: {
     ...defaultFontTitle,
@@ -259,19 +267,24 @@ const ButtonStyleWhite0 = styled(Button)(({ theme }) => ({
 }));
 
 const ButtonStyle0 = styled(Button)(({ theme }) => ({
-  width: 200,
-  padding: "8px 20px",
-  fontSize: 14,
-  color: "#fff",
+  marginTop: 5,
+  background: purpleColor,
+  color: "#ffffff",
+  letterSpacing: ".011em",
+  fontSize: 12,
+  textTransform: "none",
+  padding: "10px 0",
+  width: 180,
+  borderRadius: 5,
+  border: "1px solid #0B2545", // Cambia el borde en hover
   ...defaultFontButtom,
-  backgroundColor: blackColor,
-  borderColor: blackColor,
-  borderRadius: 10,
   "&:hover": {
-    backgroundColor: purpleColor,
+    background: "#ffffff",
+    color: "#0B2545",
   },
   "&:disabled": {
-    backgroundColor: grayColor[11],
+    backgroundColor: grayColor[5],
+    border: `1px solid ${grayColor[5]}`,
   },
 }));
 
@@ -295,6 +308,13 @@ const TitleTextPage = styled("div")(({ theme }) => ({
   fontSize: 36,
   fontWeight: "bold",
   letterSpacing: ".011em",
+  fontFamily: "sans-serif",
+}));
+
+const ParagraphTextPage = styled("div")(({ theme }) => ({
+  fontSize: 18,
+  letterSpacing: ".011em",
+  color: blackColor,
   fontFamily: "sans-serif",
 }));
 
@@ -330,5 +350,6 @@ export {
   purpleColor,
   ButtonExit,
   TitleTextPage,
+  ParagraphTextPage,
   ColorLinearProgress,
 };

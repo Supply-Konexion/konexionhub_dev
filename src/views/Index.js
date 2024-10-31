@@ -6,7 +6,7 @@ import { Grid } from "@mui/material";
 // sections for this page/view
 import Login from "views/IndexSections/Login.js";
 
-import backgroundImge from "assets/img/Fondoazuliniciosesion.png";
+import backgroundImge from "assets/img/Fondoazuliniciosesion.jpeg";
 
 export default function Index() {
   return (

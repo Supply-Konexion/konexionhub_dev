@@ -18,6 +18,7 @@ const useStyles = makeStyles(cardBodyStyle);
 
 export default function PopupLogout(props) {
   const classes = useStyles();
+
   const [open] = useState(props.open);
   const [returnLogin, setReturnLogin] = React.useState(false);
 
@@ -72,10 +73,7 @@ export default function PopupLogout(props) {
                   ¿Desea cerrar sesión?
                 </div>
                 <br></br>
-                <ButtonStyle0
-                  onClick={handleLogout}
-                  className={classes.buttonSubmit}
-                >
+                <ButtonStyle0 onClick={handleLogout} style={{ marginTop: 15 }}>
                   Cerrar sesión
                 </ButtonStyle0>
               </center>
