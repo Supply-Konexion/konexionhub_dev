@@ -1,4 +1,4 @@
-### Descripción
+### konexionhub
 
 El nuevo repositorio de Supply Konexion para desarrollar el frontend de la plataforma de la empresa. Este proyecto se enfoca en crear una interfaz robusta y fácil de usar para la orquestación de la cadena de suministro.
 
@@ -30,4 +30,4 @@ Inicia el servidor de desarrollo:
 
 ### Licencia
 
-LICENSE
+[LICENSE](LICENSE)
