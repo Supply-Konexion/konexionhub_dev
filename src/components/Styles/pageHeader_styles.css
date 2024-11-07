@@ -1,9 +1,0 @@
-.headerSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
-  background-color: rgba(0,0,0, 0.3);
-  border-bottom-left-radius: 0.2857rem;
-  border-bottom-right-radius: 0.2857rem;
-  bottom: 0px;
-}
-.headerSlider .swiper-pagination-bullet {
-background: white;
-}
